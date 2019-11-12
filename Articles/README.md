@@ -1,0 +1,1 @@
+This folder is where the materials used in the Articles, including plots, charts and figures are stored.
