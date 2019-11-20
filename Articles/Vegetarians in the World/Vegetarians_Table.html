@@ -1,0 +1,87 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.4.0.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="be3c522e-3bc8-4009-8162-6a51f019d0aa" data-root-id="1084"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1158">
+          {"d2ac67e8-ea57-434f-b7c8-eb74582a9295":{"roots":{"references":[{"attributes":{"editor":{"id":"1090","type":"StringEditor"},"field":"Country","formatter":{"id":"1091","type":"StringFormatter"},"title":"Country","width":20},"id":"1082","type":"TableColumn"},{"attributes":{},"id":"1092","type":"StringEditor"},{"attributes":{"columns":[{"id":"1081","type":"TableColumn"},{"id":"1082","type":"TableColumn"},{"id":"1083","type":"TableColumn"}],"height":280,"index_position":null,"selectable":true,"source":{"id":"1080","type":"ColumnDataSource"},"view":{"id":"1085","type":"CDSView"},"width":380},"id":"1084","type":"DataTable"},{"attributes":{"callback":null,"data":{"Country":["Argentina","Australia","Austria","Belgium","Brazil","Canada","Chile","China","Czech Republic","Denmark","Finland","France","Germany","Greece","India","Ireland","Israel","Italy","Jamaica","Japan","Latvia","Mexico","Netherlands","New Zealand","Norway","Philippines","Poland","Portugal","Russia","Slovenia","South Korea","Spain","Sweden","Switzerland","Taiwan","Thailand","Ukraine","United Kingdom","United States","Vietnam"],"Percent Vegetarians":[5,12,9,7,14,9,6,5,2,5,4,5,10,2,31,5,13,9,10,5,4,8,5,10,3,5,8,1,4,2,3,2,10,14,14,3,5,7,7,10],"Rank":[21,6,12,17,2,12,20,21,36,21,30,21,7,36,1,21,5,12,7,21,30,15,21,7,33,21,15,40,30,36,33,36,7,2,2,33,21,17,17,7],"text":["Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: Argentina","Rank: 6&lt;br&gt;Percentage of Vegetarians: 12%&lt;br&gt;Country: Australia","Rank: 12&lt;br&gt;Percentage of Vegetarians: 9%&lt;br&gt;Country: Austria","Rank: 17&lt;br&gt;Percentage of Vegetarians: 7%&lt;br&gt;Country: Belgium","Rank: 2&lt;br&gt;Percentage of Vegetarians: 14%&lt;br&gt;Country: Brazil","Rank: 12&lt;br&gt;Percentage of Vegetarians: 9%&lt;br&gt;Country: Canada","Rank: 20&lt;br&gt;Percentage of Vegetarians: 6%&lt;br&gt;Country: Chile","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: China","Rank: 36&lt;br&gt;Percentage of Vegetarians: 2%&lt;br&gt;Country: Czech Republic","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: Denmark","Rank: 30&lt;br&gt;Percentage of Vegetarians: 4%&lt;br&gt;Country: Finland","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: France","Rank: 7&lt;br&gt;Percentage of Vegetarians: 10%&lt;br&gt;Country: Germany","Rank: 36&lt;br&gt;Percentage of Vegetarians: 2%&lt;br&gt;Country: Greece","Rank: 1&lt;br&gt;Percentage of Vegetarians: 31%&lt;br&gt;Country: India","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: Ireland","Rank: 5&lt;br&gt;Percentage of Vegetarians: 13%&lt;br&gt;Country: Israel","Rank: 12&lt;br&gt;Percentage of Vegetarians: 9%&lt;br&gt;Country: Italy","Rank: 7&lt;br&gt;Percentage of Vegetarians: 10%&lt;br&gt;Country: Jamaica","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: Japan","Rank: 30&lt;br&gt;Percentage of Vegetarians: 4%&lt;br&gt;Country: Latvia","Rank: 15&lt;br&gt;Percentage of Vegetarians: 8%&lt;br&gt;Country: Mexico","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: Netherlands","Rank: 7&lt;br&gt;Percentage of Vegetarians: 10%&lt;br&gt;Country: New Zealand","Rank: 33&lt;br&gt;Percentage of Vegetarians: 3%&lt;br&gt;Country: Norway","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: Philippines","Rank: 15&lt;br&gt;Percentage of Vegetarians: 8%&lt;br&gt;Country: Poland","Rank: 40&lt;br&gt;Percentage of Vegetarians: 1%&lt;br&gt;Country: Portugal","Rank: 30&lt;br&gt;Percentage of Vegetarians: 4%&lt;br&gt;Country: Russia","Rank: 36&lt;br&gt;Percentage of Vegetarians: 2%&lt;br&gt;Country: Slovenia","Rank: 33&lt;br&gt;Percentage of Vegetarians: 3%&lt;br&gt;Country: South Korea","Rank: 36&lt;br&gt;Percentage of Vegetarians: 2%&lt;br&gt;Country: Spain","Rank: 7&lt;br&gt;Percentage of Vegetarians: 10%&lt;br&gt;Country: Sweden","Rank: 2&lt;br&gt;Percentage of Vegetarians: 14%&lt;br&gt;Country: Switzerland","Rank: 2&lt;br&gt;Percentage of Vegetarians: 14%&lt;br&gt;Country: Taiwan","Rank: 33&lt;br&gt;Percentage of Vegetarians: 3%&lt;br&gt;Country: Thailand","Rank: 21&lt;br&gt;Percentage of Vegetarians: 5%&lt;br&gt;Country: Ukraine","Rank: 17&lt;br&gt;Percentage of Vegetarians: 7%&lt;br&gt;Country: United Kingdom","Rank: 17&lt;br&gt;Percentage of Vegetarians: 7%&lt;br&gt;Country: United States","Rank: 7&lt;br&gt;Percentage of Vegetarians: 10%&lt;br&gt;Country: Vietnam"]},"selected":{"id":"1086","type":"Selection"},"selection_policy":{"id":"1087","type":"UnionRenderers"}},"id":"1080","type":"ColumnDataSource"},{"attributes":{},"id":"1088","type":"StringEditor"},{"attributes":{"source":{"id":"1080","type":"ColumnDataSource"}},"id":"1085","type":"CDSView"},{"attributes":{},"id":"1090","type":"StringEditor"},{"attributes":{"editor":{"id":"1088","type":"StringEditor"},"field":"Rank","formatter":{"id":"1089","type":"StringFormatter"},"title":"Rank","width":20},"id":"1081","type":"TableColumn"},{"attributes":{},"id":"1086","type":"Selection"},{"attributes":{},"id":"1089","type":"StringFormatter"},{"attributes":{},"id":"1087","type":"UnionRenderers"},{"attributes":{},"id":"1093","type":"StringFormatter"},{"attributes":{"editor":{"id":"1092","type":"StringEditor"},"field":"Percent Vegetarians","formatter":{"id":"1093","type":"StringFormatter"},"title":"Percent Vegetarians","width":20},"id":"1083","type":"TableColumn"},{"attributes":{},"id":"1091","type":"StringFormatter"}],"root_ids":["1084"]},"title":"Bokeh Application","version":"1.4.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1158').textContent;
+                  var render_items = [{"docid":"d2ac67e8-ea57-434f-b7c8-eb74582a9295","roots":{"1084":"be3c522e-3bc8-4009-8162-6a51f019d0aa"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
