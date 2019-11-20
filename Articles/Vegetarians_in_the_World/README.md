@@ -1,1 +1,1 @@
-This folder is where the materials used in the Article: "Vegetarians in the World".
+This folder includes the materials used in the Article: "Vegetarians in the World".
