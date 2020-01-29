@@ -12,7 +12,7 @@ Germany,DAX,DAX 30 Index,^GDAXI,EUR,EURUSD=X
 France,CAC,CAC 40 Index,^FCHI,EUR,EURUSD=X
 Switzerland,SMI,Swiss Market Index ,^SSMI,CHF,CHFUSD=X
 Brazil,IBOVESPA,Indice Bovespa (IBovespa),^BVSP,BRL,BRLUSD=X
-Argentina,MERVAL,MERVAL Index,^MERV,USD,NA
+Argentina,MERVAL,MERVAL Index,^MERV,ARS,ARSUSD=X
 Colombia,COLCAP,COLPAC Index,GXG,USD,NA
 Mexico,MEXBOL,Mexican Bolsa,^MXX,MXN,MXNUSD=X
 US,SP500,S&P 500 Index,^GSPC,USD,NA
