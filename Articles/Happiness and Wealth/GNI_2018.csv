@@ -1,0 +1,190 @@
+﻿Country,ISO3,Gross national income (GNI) per capita (PPP k$),Rank_GNI_PPP
+Norway,NOR,68.059,6
+Switzerland,CHE,59.375,10
+Ireland,IRL,55.66,12
+Germany,DEU,46.946,19
+Hong Kong,HKG,60.221,9
+Australia,AUS,44.097,21
+Iceland,ISL,47.566,18
+Sweden,SWE,47.955,17
+Singapore,SGP,83.793,3
+Netherlands,NLD,50.013,13
+Denmark,DNK,48.836,15
+Finland,FIN,41.779,24
+Canada,CAN,43.602,23
+New Zealand,NZL,35.108,32
+United Kingdom,GBR,39.507,28
+United States of America,USA,56.14,11
+Belgium,BEL,43.821,22
+Liechtenstein,LIE,99.732,2
+Japan,JPN,40.799,25
+Austria,AUT,46.231,20
+Luxembourg,LUX,65.543,8
+Israel,ISR,33.65,35
+South Korea,KOR,36.757,30
+Slovenia,SVN,32.143,37
+Spain,ESP,35.041,33
+Czech Republic,CZE,31.597,38
+France,FRA,40.511,26
+Malta,MLT,34.795,34
+Italy,ITA,36.141,31
+Estonia,EST,30.379,40
+Cyprus,CYP,33.1,36
+Greece,GRC,24.909,52
+Poland,POL,27.626,45
+Lithuania,LTU,29.775,41
+United Arab Emirates,ARE,66.912,7
+Andorra,AND,48.641,16
+Saudi Arabia,SAU,49.338,14
+Slovakia,SVK,30.672,39
+Latvia,LVA,26.301,49
+Portugal,PRT,27.935,44
+Qatar,QAT,110.489,1
+Chile,CHL,21.972,59
+Brunei Darussalam,BRN,76.389,4
+Hungary,HUN,27.144,47
+Bahrain,BHR,40.399,27
+Croatia,HRV,23.061,55
+Oman,OMN,37.039,29
+Argentina,ARG,17.611,66
+Russia,RUS,25.036,51
+Belarus,BLR,17.039,68
+Kazakhstan,KAZ,22.168,58
+Bulgaria,BGR,19.646,61
+Montenegro,MNE,17.511,67
+Romania,ROU,23.906,54
+Palau,PLW,16.72,69
+Barbados,BRB,15.912,74
+Kuwait,KWT,71.164,5
+Uruguay,URY,19.435,62
+Turkey,TUR,24.905,53
+Bahamas,BHS,28.395,43
+Malaysia,MYS,27.227,46
+Seychelles,SYC,25.077,50
+Serbia,SRB,15.218,78
+Trinidad and Tobago,TTO,28.497,42
+Iran,IRN,18.166,63
+Mauritius,MUS,22.724,56
+Panama,PAN,20.455,60
+Costa Rica,CRI,14.79,80
+Albania,ALB,12.3,89
+Georgia,GEO,9.57,104
+Sri Lanka,LKA,11.611,95
+Cuba,CUB,7.811,115
+Saint Kitts and Nevis,KNA,26.77,48
+Antigua and Barbuda,ATG,22.201,57
+Bosnia and Herzegovina,BIH,12.69,85
+Mexico,MEX,17.628,65
+Thailand,THA,16.129,71
+Grenada,GRD,12.684,86
+Brazil,BRA,14.068,81
+Colombia,COL,12.896,83
+Armenia,ARM,9.277,107
+Algeria,DZA,13.639,82
+North Macedonia,MKD,12.874,84
+Peru,PER,12.323,88
+China,CHN,16.127,72
+Ecuador,ECU,10.141,102
+Azerbaijan,AZE,15.24,77
+Ukraine,UKR,7.994,113
+Dominican Republic,DOM,15.074,79
+Saint Lucia,LCA,11.528,96
+Tunisia,TUN,10.677,101
+Mongolia,MNG,10.784,99
+Lebanon,LBN,11.136,98
+Botswana,BWA,15.951,73
+Saint Vincent and the Grenadines,VCT,11.746,92
+Jamaica,JAM,7.932,114
+Venezuela,VEN,9.07,110
+Dominica,DMA,9.245,108
+Fiji,FJI,9.11,109
+Paraguay,PRY,11.72,93
+Suriname,SUR,11.933,90
+Jordan,JOR,8.268,112
+Belize,BLZ,7.136,120
+Maldives,MDV,12.549,87
+Tonga,TON,5.783,131
+Philippines,PHL,9.54,105
+Moldova,MDA,6.833,123
+Turkmenistan,TKM,16.407,70
+Uzbekistan,UZB,6.462,126
+Libya,LBY,11.685,94
+Indonesia,IDN,11.256,97
+Samoa,WSM,5.885,129
+South Africa,ZAF,11.756,91
+Bolivia,BOL,6.849,122
+Gabon,GAB,15.794,75
+Egypt,EGY,10.744,100
+Marshall Islands,MHL,4.633,138
+Vietnam,VNM,6.22,128
+Palestine,PSE,5.314,134
+Iraq,IRQ,15.365,76
+Morocco,MAR,7.48,118
+Kyrgyzstan,KGZ,3.317,152
+Guyana,GUY,7.615,116
+El Salvador,SLV,6.973,121
+Tajikistan,TJK,3.482,151
+Cape Verde,CPV,6.513,125
+Guatemala,GTM,7.378,119
+Nicaragua,NIC,4.79,137
+India,IND,6.829,124
+Namibia,NAM,9.683,103
+Timor Leste,TLS,7.527,117
+Honduras,HND,4.258,139
+Kiribati,KIR,3.917,143
+Bhutan,BTN,8.609,111
+Bangladesh,BGD,4.057,141
+Federated States of Micronesia,FSM,3.7,145
+Sao Tome and Principe,STP,3.024,157
+Congo,COG,5.804,130
+Swaziland,SWZ,9.359,106
+Laos,LAO,6.317,127
+Vanuatu,VUT,2.808,158
+Ghana,GHA,4.099,140
+Zambia,ZMB,3.582,150
+Equatorial Guinea,GNQ,17.796,64
+Myanmar,MMR,5.764,132
+Cambodia,KHM,3.597,148
+Kenya,KEN,3.052,156
+Nepal,NPL,2.748,160
+Angola,AGO,5.555,133
+Cameroon,CMR,3.291,153
+Zimbabwe,ZWE,2.661,162
+Pakistan,PAK,5.19,135
+Solomon Islands,SLB,2.027,166
+Syria,SYR,2.725,161
+Papua New Guinea,PNG,3.686,146
+Comoros,COM,2.426,163
+Rwanda,RWA,1.959,168
+Nigeria,NGA,5.086,136
+Tanzania,TZA,2.805,159
+Uganda,UGA,1.752,170
+Mauritania,MRT,3.746,144
+Madagascar,MDG,1.404,181
+Benin,BEN,2.135,165
+Lesotho,LSO,3.244,155
+Ivory Coast,CIV,3.589,149
+Senegal,SEN,3.256,154
+Togo,TGO,1.593,176
+Sudan,SDN,3.962,142
+Haiti,HTI,1.665,175
+Afghanistan,AFG,1.746,171
+Djibouti,DJI,3.601,147
+Malawi,MWI,1.159,183
+Ethiopia,ETH,1.782,169
+Gambia,GMB,1.49,178
+Guinea,GIN,2.211,164
+Liberia,LBR,1.04,185
+Yemen,YEM,1.433,180
+Guinea-Bissau,GNB,1.593,176
+Democratic Republic of Congo,COD,0.8,187
+Mozambique,MOZ,1.154,184
+Sierra Leone,SLE,1.381,182
+Burkina Faso,BFA,1.705,174
+Eritrea,ERI,1.708,173
+Mali,MLI,1.965,167
+Burundi,BDI,0.66,189
+South Sudan,SSD,1.455,179
+Chad,TCD,1.716,172
+Central African Republic,CAF,0.777,188
+Niger,NER,0.912,186

@@ -1,0 +1,553 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Panel</title>
+      
+      
+        
+          
+        <style>
+            table.panel-df {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: none;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    color: black;
+                    font-size: 12px;
+                    table-layout: fixed;
+                    width: 100%;
+                }
+
+                .panel-df tr, th, td {
+                    text-align: right;
+                    vertical-align: middle;
+                    padding: 0.5em 0.5em !important;
+                    line-height: normal;
+                    white-space: normal;
+                    max-width: none;
+                    border: none;
+                }
+
+                .panel-df tbody {
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                }
+
+                .panel-df tbody tr:nth-child(odd) {
+                    background: #f5f5f5;
+                }
+
+                .panel-df thead {
+                    border-bottom: 1px solid black;
+                    vertical-align: bottom;
+                }
+
+                .panel-df tr:hover {
+                    background: lightblue !important;
+                    cursor: pointer;
+                }
+
+        </style>
+        <style>
+            .json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-row,
+                .json-formatter-row a,
+                .json-formatter-row a:hover {
+                  color: black;
+                  text-decoration: none;
+                }
+                .json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-row .json-formatter-string,
+                .json-formatter-row .json-formatter-stringifiable {
+                  color: green;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-row .json-formatter-number {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-boolean {
+                  color: red;
+                }
+                .json-formatter-row .json-formatter-null {
+                  color: #855A00;
+                }
+                .json-formatter-row .json-formatter-undefined {
+                  color: #ca0b69;
+                }
+                .json-formatter-row .json-formatter-function {
+                  color: #FF20ED;
+                }
+                .json-formatter-row .json-formatter-date {
+                  background-color: rgba(0, 0, 0, 0.05);
+                }
+                .json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: blue;
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-bracket {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-key {
+                  color: #00008B;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+                .json-formatter-dark.json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-dark.json-formatter-row,
+                .json-formatter-dark.json-formatter-row a,
+                .json-formatter-dark.json-formatter-row a:hover {
+                  color: white;
+                  text-decoration: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-string,
+                .json-formatter-dark.json-formatter-row .json-formatter-stringifiable {
+                  color: #31F031;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-number {
+                  color: #66C2FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-boolean {
+                  color: #EC4242;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-null {
+                  color: #EEC97D;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-undefined {
+                  color: #ef8fbe;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-function {
+                  color: #FD48CB;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-date {
+                  background-color: rgba(255, 255, 255, 0.05);
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: #027BFF;
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-bracket {
+                  color: #9494FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-key {
+                  color: #23A0DB;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+
+        </style>
+        <style>
+            .codehilite .hll { background-color: #ffffcc }
+                .codehilite  { background: #f8f8f8; }
+                .codehilite .c { color: #408080; font-style: italic } /* Comment */
+                .codehilite .err { border: 1px solid #FF0000 } /* Error */
+                .codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+                .codehilite .o { color: #666666 } /* Operator */
+                .codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+                .codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+                .codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+                .codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+                .codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+                .codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+                .codehilite .gd { color: #A00000 } /* Generic.Deleted */
+                .codehilite .ge { font-style: italic } /* Generic.Emph */
+                .codehilite .gr { color: #FF0000 } /* Generic.Error */
+                .codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+                .codehilite .gi { color: #00A000 } /* Generic.Inserted */
+                .codehilite .go { color: #888888 } /* Generic.Output */
+                .codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+                .codehilite .gs { font-weight: bold } /* Generic.Strong */
+                .codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+                .codehilite .gt { color: #0044DD } /* Generic.Traceback */
+                .codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+                .codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+                .codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+                .codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+                .codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+                .codehilite .kt { color: #B00040 } /* Keyword.Type */
+                .codehilite .m { color: #666666 } /* Literal.Number */
+                .codehilite .s { color: #BA2121 } /* Literal.String */
+                .codehilite .na { color: #7D9029 } /* Name.Attribute */
+                .codehilite .nb { color: #008000 } /* Name.Builtin */
+                .codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+                .codehilite .no { color: #880000 } /* Name.Constant */
+                .codehilite .nd { color: #AA22FF } /* Name.Decorator */
+                .codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+                .codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+                .codehilite .nf { color: #0000FF } /* Name.Function */
+                .codehilite .nl { color: #A0A000 } /* Name.Label */
+                .codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+                .codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+                .codehilite .nv { color: #19177C } /* Name.Variable */
+                .codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+                .codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+                .codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+                .codehilite .mf { color: #666666 } /* Literal.Number.Float */
+                .codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+                .codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+                .codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+                .codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+                .codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+                .codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+                .codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+                .codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+                .codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+                .codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+                .codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+                .codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+                .codehilite .sx { color: #008000 } /* Literal.String.Other */
+                .codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+                .codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+                .codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+                .codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+                .codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+                .codehilite .vc { color: #19177C } /* Name.Variable.Class */
+                .codehilite .vg { color: #19177C } /* Name.Variable.Global */
+                .codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+                .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+                .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+                .markdown h1 { margin-block-start: 0.34em }
+                .markdown h2 { margin-block-start: 0.42em }
+                .markdown h3 { margin-block-start: 0.5em }
+                .markdown h4 { margin-block-start: 0.67em }
+                .markdown h5 { margin-block-start: 0.84em }
+                .markdown h6 { margin-block-start: 1.17em }
+                .markdown ul { padding-inline-start: 2em }
+                .markdown ol { padding-inline-start: 2em }
+                .markdown strong { font-weight: 600 }
+                .markdown a { color: -webkit-link }
+                .markdown a { color: -moz-hyperlinkText }
+
+        </style>
+        <style>
+            .widget-box {
+                	min-height: 20px;
+                	background-color: #f5f5f5;
+                	border: 1px solid #e3e3e3 !important;
+                	border-radius: 4px;
+                	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	overflow-x: hidden;
+                	overflow-y: hidden;
+                }
+
+                .scrollable {
+                  overflow: scroll;
+                }
+
+                progress {
+                	appearance: none;
+                	-moz-appearance: none;
+                	-webkit-appearance: none;
+
+                	border: none;
+                	height: 20px;
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                	color: royalblue;
+                	position: relative;
+                	margin: 0 0 1.5em;
+                }
+
+                progress[value]::-webkit-progress-bar {
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                }
+
+                progress[value]::-webkit-progress-value {
+                	position: relative;
+
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress.active:not([value])::before {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress[value]::-moz-progress-bar {
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress:not([value])::-moz-progress-bar {
+                	border-radius:3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+
+                }
+
+                progress.active:not([value])::-moz-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.active:not([value])::-webkit-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.primary[value]::-webkit-progress-value { background-color: #007bff; }
+                progress.primary:not([value])::before { background-color: #007bff; }
+                progress.primary:not([value])::-webkit-progress-bar { background-color: #007bff; }
+                progress.primary::-moz-progress-bar { background-color: #007bff; }
+
+                progress.secondary[value]::-webkit-progress-value { background-color: #6c757d; }
+                progress.secondary:not([value])::before { background-color: #6c757d; }
+                progress.secondary:not([value])::-webkit-progress-bar { background-color: #6c757d; }
+                progress.secondary::-moz-progress-bar { background-color: #6c757d; }
+
+                progress.success[value]::-webkit-progress-value { background-color: #28a745; }
+                progress.success:not([value])::before { background-color: #28a745; }
+                progress.success:not([value])::-webkit-progress-bar { background-color: #28a745; }
+                progress.success::-moz-progress-bar { background-color: #28a745; }
+
+                progress.danger[value]::-webkit-progress-value { background-color: #dc3545; }
+                progress.danger:not([value])::before { background-color: #dc3545; }
+                progress.danger:not([value])::-webkit-progress-bar { background-color: #dc3545; }
+                progress.danger::-moz-progress-bar { background-color: #dc3545; }
+
+                progress.warning[value]::-webkit-progress-value { background-color: #ffc107; }
+                progress.warning:not([value])::before { background-color: #ffc107; }
+                progress.warning:not([value])::-webkit-progress-bar { background-color: #ffc107; }
+                progress.warning::-moz-progress-bar { background-color: #ffc107; }
+
+                progress.info[value]::-webkit-progress-value { background-color: #17a2b8; }
+                progress.info:not([value])::before { background-color: #17a2b8; }
+                progress.info:not([value])::-webkit-progress-bar { background-color: #17a2b8; }
+                progress.info::-moz-progress-bar { background-color: #17a2b8; }
+
+                progress.light[value]::-webkit-progress-value { background-color: #f8f9fa; }
+                progress.light:not([value])::before { background-color: #f8f9fa; }
+                progress.light:not([value])::-webkit-progress-bar { background-color: #f8f9fa; }
+                progress.light::-moz-progress-bar { background-color: #f8f9fa; }
+
+                progress.dark[value]::-webkit-progress-value { background-color: #343a40; }
+                progress.dark:not([value])::-webkit-progress-bar { background-color: #343a40; }
+                progress.dark:not([value])::before { background-color: #343a40; }
+                progress.dark::-moz-progress-bar { background-color: #343a40; }
+
+                progress:not([value])::-webkit-progress-bar {
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+                progress:not([value])::before {
+                	content:" ";
+                	position:absolute;
+                	height: 20px;
+                	top:0;
+                	left:0;
+                	right:0;
+                	bottom:0;
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+
+                @keyframes stripes {
+                  from {background-position: 0%}
+                  to {background-position: 100%}
+                }
+        </style>
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="6bacc4bc-12ab-4f44-890f-199ddd6209c1" data-root-id="1467"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1760">
+          {"138a6655-76a0-4903-91d6-b543f37b52a8":{"roots":{"references":[{"attributes":{"callback":null,"end":113.48899999999999,"reset_end":113.48899999999999,"reset_start":-2.34,"start":-2.34,"tags":[[["GNI_per_capita_PPP","GNI_per_capita_PPP",null]]]},"id":"1471","type":"Range1d"},{"attributes":{},"id":"1485","type":"BasicTicker"},{"attributes":{"line_alpha":0.1,"line_color":"black","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1535","type":"Line"},{"attributes":{},"id":"1482","type":"LinearScale"},{"attributes":{"click_policy":"mute","items":[{"id":"1530","type":"LegendItem"}],"location":[0,0],"orientation":"horizontal"},"id":"1529","type":"Legend"},{"attributes":{},"id":"1532","type":"Selection"},{"attributes":{"above":[{"id":"1529","type":"Legend"}],"align":null,"below":[{"id":"1484","type":"LinearAxis"}],"center":[{"id":"1488","type":"Grid"},{"id":"1493","type":"Grid"},{"id":"1529","type":"Legend"}],"left":[{"id":"1489","type":"LinearAxis"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_width":800,"renderers":[{"id":"1521","type":"GlyphRenderer"},{"id":"1537","type":"GlyphRenderer"}],"sizing_mode":"fixed","title":{"id":"1476","type":"Title"},"toolbar":{"id":"1499","type":"Toolbar"},"x_range":{"id":"1470","type":"Range1d"},"x_scale":{"id":"1480","type":"LinearScale"},"y_range":{"id":"1471","type":"Range1d"},"y_scale":{"id":"1482","type":"LinearScale"}},"id":"1475","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"data":{"Country":["Tanzania","Canada","United States of America","Kazakhstan","Uzbekistan","Indonesia","Argentina","Chile","Dem. Rep. Congo","Kenya","Chad","Haiti","Dominican Rep.","Russia","Norway","South Africa","Lesotho","Mexico","Uruguay","Brazil","Bolivia","Peru","Colombia","Panama","Costa Rica","Nicaragua","Honduras","El Salvador","Guatemala","Venezuela","France","Ecuador","Jamaica","Zimbabwe","Botswana","Namibia","Senegal","Mali","Mauritania","Benin","Niger","Nigeria","Cameroon","Togo","Ghana","C\u00f4te d'Ivoire","Guinea","Liberia","Sierra Leone","Burkina Faso","Central African Rep.","Congo","Gabon","Zambia","Malawi","Mozambique","eSwatini","Burundi","Israel","Lebanon","Madagascar","Palestine","Gambia","Tunisia","Algeria","Jordan","United Arab Emirates","Qatar","Kuwait","Iraq","Cambodia","Thailand","Laos","Myanmar","Vietnam","South Korea","Mongolia","India","Bangladesh","Bhutan","Nepal","Pakistan","Afghanistan","Tajikistan","Kyrgyzstan","Turkmenistan","Iran","Syria","Armenia","Sweden","Belarus","Ukraine","Poland","Austria","Hungary","Moldova","Romania","Lithuania","Latvia","Estonia","Germany","Bulgaria","Greece","Turkey","Albania","Croatia","Switzerland","Luxembourg","Belgium","Netherlands","Portugal","Spain","Ireland","New Zealand","Australia","Sri Lanka","China","Italy","Denmark","United Kingdom","Iceland","Azerbaijan","Georgia","Philippines","Malaysia","Slovenia","Finland","Slovakia","Czechia","Japan","Paraguay","Yemen","Saudi Arabia","Cyprus","Morocco","Egypt","Libya","Ethiopia","Uganda","Rwanda","Bosnia and Herz.","Macedonia","Serbia","Montenegro","Trinidad and Tobago","S. Sudan"],"GNI_per_capita_PPP":{"__ndarray__":"cT0K16NwBkCTGARWDs1FQFK4HoXrEUxAX7pJDAIrNkANAiuHFtkZQE+Nl24SgyZAI9v5fmqcMUBFtvP91Pg1QJqZmZmZmek/0SLb+X5qCEDb+X5qvHT7P6RwPQrXo/o/2s73U+MlLkDvp8ZLNwk5QLKd76fGA1FAT42XbhKDJ0DAyqFFtvMJQFTjpZvEoDFAj8L1KFxvM0CJQWDl0CIsQEw3iUFgZRtATDeJQWClKECXbhKDwMopQBSuR+F6dDRAFK5H4XqULUApXI/C9SgTQNV46SYxCBFAMQisHFrkG0BPjZduEoMdQKRwPQrXIyJAxCCwcmhBREDVeOkmMUgkQO58PzVeuh9AfT81XrpJBUDz/dR46eYvQARWDi2yXSNAQDVeukkMCkBxPQrXo3D/PyyHFtnO9w1AFK5H4XoUAUDJdr6fGi/tP/LSTWIQWBRAiBbZzvdTCkCxcmiR7Xz5P0w3iUFgZRBAg8DKoUW2DEDjpZvEILABQKRwPQrXo/A/f2q8dJMY9j9I4XoUrkf7P3e+nxov3eg/ne+nxks3F0BKDAIrh5YvQA4tsp3vpwxAJQaBlUOL8j8RWDm0yHbyPyuHFtnOtyJAH4XrUbge5T8zMzMzM9NAQBKDwMqhRSZAEVg5tMh29j+oxks3iUEVQNejcD0K1/c/tMh2vp9aJUC7SQwCK0crQO+nxks3iSBA7Xw/NV66UECd76fGS59bQNEi2/l+ylFAexSuR+G6LkAtsp3vp8YMQBsv3SQGITBA+FPjpZtEGUB0kxgEVg4XQOF6FK5H4RhAN4lBYOVgQkDFILByaJElQDeJQWDlUBtA7Xw/NV46EEArhxbZzjchQJZDi2zn+wVAw/UoXI/CFEBWDi2yne/7P0Fg5dAi2wtA76fGSzeJCkDVeOkmMWgwQNEi2/l+KjJAzczMzMzMBUDo+6nx0o0iQArXo3A9+kdARIts5/sJMUBg5dAi2/kfQMZLN4lBoDtAIbByaJEdR0C/nxov3SQ7QKFFtvP9VBtADi2yne/nN0BmZmZmZsY9QJMYBFYOTTpAGy/dJAZhPkANAiuHFnlHQEw3iUFgpTNAYxBYObToOEBI4XoUruc4QJqZmZmZmShAVg4tsp0PN0AAAAAAALBNQJhuEoPAYlBADQIrhxbpRUCMbOf7qQFJQI/C9Shc7ztAaJHtfD+FQUAUrkfhetRLQOj7qfHSjUFAI9v5fmoMRkBFtvP91DgnQI2XbhKDIDBANV66SQwSQkBfukkMAmtIQDeJQWDlwENAnMQgsHLIR0B7FK5H4XouQKRwPQrXIyNAFK5H4XoUI0AmMQisHDo7QPyp8dJNEkBAwMqhRbbjREB46SYxCKw+QEW28/3UmD9Ag8DKoUVmREBxPQrXo3AnQCGwcmiR7fY/JQaBlUOrSEDNzMzMzIxAQOxRuB6F6x1AsXJoke18JUAfhetRuF4nQE+Nl24Sg/w/1HjpJjEI/D/y0k1iEFj/P+F6FK5HYSlAc2iR7Xy/KUBWDi2ynW8uQIlBYOXQgjFArBxaZDt/PEBI4XoUrkf3Pw==","dtype":"float64","shape":[146]},"Happiness_Score":{"__ndarray__":"DQIrhxbZCUDpJjEIrBwdQMUgsHJokRtAI9v5fmo8F0AYBFYOLbIYQPhT46WbxBRA8tJNYhBYGEAtsp3vp8YZQHnpJjEIrBFA76fGSzcJEkBmZmZmZmYRQC2yne+nxgxAMzMzMzOzFUBkO99PjZcWQJ3vp8ZLNx5AFtnO91PjEkDRItv5fmoOQOF6FK5HYRpAeOkmMQgsGUAzMzMzMzMZQARWDi2yHRdAfT81XrrJFkAAAAAAAIAYQGMQWDm0SBlAX7pJDAKrHEDsUbgehWsYQHE9CtejcBdAT42XbhIDGUBYObTIdr4ZQIcW2c730xJAku18PzVeGkDpJjEIrBwYQI/C9ShcjxdA6Pup8dJNDUCBlUOLbOcLQHSTGARWjhJA001iEFi5EkCPwvUoXI8RQPYoXI/C9RFA1XjpJjGIE0BQjZduEoMSQI/C9ShcDxVAkxgEVg4tFEDXo3A9ClcQQJZDi2zn+xNALbKd76fGE0CJQWDl0CISQM3MzMzMzA9A5dAi2/l+EUAMAiuHFlkSQESLbOf7qQhAc2iR7Xw/E0AYBFYOLTITQCGwcmiRbRBASOF6FK5HC0B3vp8aL90RQAwCK4cW2RBAMzMzMzMzDkB0kxgEVo4cQH0/NV66yRRAEVg5tMh2D0BjEFg5tMgSQKrx0k1iEBJA8tJNYhDYEUDy0k1iENgUQDq0yHa+nxNAzczMzMxMG0Dl0CLb+X4ZQC/dJAaBFRhAc2iR7Xy/EUDNzMzMzMwSQNR46SYxCBhAyXa+nxovE0BxPQrXo3ARQDMzMzMzsxRAFK5H4XqUF0CkcD0K1yMVQI/C9ShcDxBAbef7qfHSEUCHFtnO91MUQPT91HjpphNA6SYxCKycFkA6tMh2vp8JQJLtfD813hVAJQaBlUMLFUCxcmiR7fwUQP7UeOkmMRJAGARWDi2yC0Aj2/l+ajwSQKwcWmQ7Xx1Al24Sg8BKFUCHFtnO91MRQO58PzVeuhhAlkOLbOf7HEDUeOkmMQgXQARWDi2yHRZASOF6FK5HGEB/arx0k5gYQMP1KFyPwhdA30+Nl26SF0BxPQrXo/AbQCUGgZVDCxRA2s73U+MlFUDKoUW2830VQMZLN4lB4BJA7nw/NV66FUDsUbgehesdQFyPwvUoXBxA/dR46SaxG0DAyqFFtvMdQBKDwMqhxRZA0SLb+X5qGUAv3SQGgRUcQO58PzVeOh1AtvP91HjpHEARWDm0yHYRQN0kBoGVwxRAMQisHFrkGEBmZmZmZmYeQJ3vp8ZLNxxAYOXQItv5HUChRbbz/dQUQPp+arx0ExJAoBov3SSGFkBBYOXQIlsVQEW28/3UeBhA+n5qvHQTH0CXbhKDwMoYQJzEILByaBtAJQaBlUOLF0BFtvP91PgWQArXo3A9CgtAAAAAAACAGUDJdr6fGi8YQKFFtvP91BRARIts5/upEECamZmZmRkWQL+fGi/dJBFAqMZLN4nBEEB46SYxCKwKQCUGgZVDixVAf2q8dJMYFUC28/3UeGkWQGQ730+NFxZA+FPjpZvEGEBt5/up8dIGQA==","dtype":"float64","shape":[146]},"color":["Africa","North America","North America","Asia","Asia","Asia","South America","South America","Africa","Africa","Africa","North America","North America","Europe","Europe","Africa","Africa","North America","South America","South America","South America","South America","South America","North America","North America","North America","North America","North America","North America","South America","Europe","South America","North America","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Asia","Asia","Africa","Asia","Africa","Africa","Africa","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Asia","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Oceania","Oceania","Asia","Asia","Europe","Europe","Europe","Europe","Asia","Asia","Asia","Asia","Europe","Europe","Europe","Europe","Asia","South America","Asia","Asia","Asia","Africa","Africa","Africa","Africa","Africa","Africa","Europe","Europe","Europe","Europe","North America","Africa"],"continent":["Africa","North America","North America","Asia","Asia","Asia","South America","South America","Africa","Africa","Africa","North America","North America","Europe","Europe","Africa","Africa","North America","South America","South America","South America","South America","South America","North America","North America","North America","North America","North America","North America","South America","Europe","South America","North America","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Africa","Asia","Asia","Africa","Asia","Africa","Africa","Africa","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Asia","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Oceania","Oceania","Asia","Asia","Europe","Europe","Europe","Europe","Asia","Asia","Asia","Asia","Europe","Europe","Europe","Europe","Asia","South America","Asia","Asia","Asia","Africa","Africa","Africa","Africa","Africa","Africa","Europe","Europe","Europe","Europe","North America","Africa"]},"selected":{"id":"1514","type":"Selection"},"selection_policy":{"id":"1544","type":"UnionRenderers"}},"id":"1513","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1531","type":"ColumnDataSource"}},"id":"1538","type":"CDSView"},{"attributes":{"line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1534","type":"Line"},{"attributes":{"dimension":1,"grid_line_color":null,"ticker":{"id":"1490","type":"BasicTicker"}},"id":"1493","type":"Grid"},{"attributes":{"grid_line_color":null,"ticker":{"id":"1485","type":"BasicTicker"}},"id":"1488","type":"Grid"},{"attributes":{},"id":"1494","type":"SaveTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"line_alpha":{"value":0.1},"line_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"size":{"units":"screen","value":10},"x":{"field":"Happiness_Score"},"y":{"field":"GNI_per_capita_PPP"}},"id":"1517","type":"Scatter"},{"attributes":{},"id":"1496","type":"WheelZoomTool"},{"attributes":{"factors":["Africa","North America","Asia","South America","Europe","Oceania"],"palette":["saddlebrown","navy","yellow","aqua","lime","red"]},"id":"1512","type":"CategoricalColorMapper"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1528","type":"BoxAnnotation"},{"attributes":{"axis_label":"Happiness_Score","bounds":"auto","formatter":{"id":"1508","type":"BasicTickFormatter"},"major_label_orientation":"horizontal","ticker":{"id":"1485","type":"BasicTicker"}},"id":"1484","type":"LinearAxis"},{"attributes":{"children":[{"id":"1475","subtype":"Figure","type":"Plot"}],"margin":[0,0,0,0],"name":"Row03019","tags":["embedded"]},"id":"1467","type":"Row"},{"attributes":{"fill_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"line_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"size":{"units":"screen","value":10},"x":{"field":"Happiness_Score"},"y":{"field":"GNI_per_capita_PPP"}},"id":"1516","type":"Scatter"},{"attributes":{"callback":null,"data":{"x":{"__ndarray__":"DQIrhxbZCUDpJjEIrBwdQMUgsHJokRtAI9v5fmo8F0AYBFYOLbIYQPhT46WbxBRA8tJNYhBYGEAtsp3vp8YZQHnpJjEIrBFA76fGSzcJEkBmZmZmZmYRQC2yne+nxgxAMzMzMzOzFUBkO99PjZcWQJ3vp8ZLNx5AFtnO91PjEkDRItv5fmoOQOF6FK5HYRpAeOkmMQgsGUAzMzMzMzMZQARWDi2yHRdAfT81XrrJFkAAAAAAAIAYQGMQWDm0SBlAX7pJDAKrHEDsUbgehWsYQHE9CtejcBdAT42XbhIDGUBYObTIdr4ZQIcW2c730xJAku18PzVeGkDpJjEIrBwYQI/C9ShcjxdA6Pup8dJNDUCBlUOLbOcLQHSTGARWjhJA001iEFi5EkCPwvUoXI8RQPYoXI/C9RFA1XjpJjGIE0BQjZduEoMSQI/C9ShcDxVAkxgEVg4tFEDXo3A9ClcQQJZDi2zn+xNALbKd76fGE0CJQWDl0CISQM3MzMzMzA9A5dAi2/l+EUAMAiuHFlkSQESLbOf7qQhAc2iR7Xw/E0AYBFYOLTITQCGwcmiRbRBASOF6FK5HC0B3vp8aL90RQAwCK4cW2RBAMzMzMzMzDkB0kxgEVo4cQH0/NV66yRRAEVg5tMh2D0BjEFg5tMgSQKrx0k1iEBJA8tJNYhDYEUDy0k1iENgUQDq0yHa+nxNAzczMzMxMG0Dl0CLb+X4ZQC/dJAaBFRhAc2iR7Xy/EUDNzMzMzMwSQNR46SYxCBhAyXa+nxovE0BxPQrXo3ARQDMzMzMzsxRAFK5H4XqUF0CkcD0K1yMVQI/C9ShcDxBAbef7qfHSEUCHFtnO91MUQPT91HjpphNA6SYxCKycFkA6tMh2vp8JQJLtfD813hVAJQaBlUMLFUCxcmiR7fwUQP7UeOkmMRJAGARWDi2yC0Aj2/l+ajwSQKwcWmQ7Xx1Al24Sg8BKFUCHFtnO91MRQO58PzVeuhhAlkOLbOf7HEDUeOkmMQgXQARWDi2yHRZASOF6FK5HGEB/arx0k5gYQMP1KFyPwhdA30+Nl26SF0BxPQrXo/AbQCUGgZVDCxRA2s73U+MlFUDKoUW2830VQMZLN4lB4BJA7nw/NV66FUDsUbgehesdQFyPwvUoXBxA/dR46SaxG0DAyqFFtvMdQBKDwMqhxRZA0SLb+X5qGUAv3SQGgRUcQO58PzVeOh1AtvP91HjpHEARWDm0yHYRQN0kBoGVwxRAMQisHFrkGEBmZmZmZmYeQJ3vp8ZLNxxAYOXQItv5HUChRbbz/dQUQPp+arx0ExJAoBov3SSGFkBBYOXQIlsVQEW28/3UeBhA+n5qvHQTH0CXbhKDwMoYQJzEILByaBtAJQaBlUOLF0BFtvP91PgWQArXo3A9CgtAAAAAAACAGUDJdr6fGi8YQKFFtvP91BRARIts5/upEECamZmZmRkWQL+fGi/dJBFAqMZLN4nBEEB46SYxCKwKQCUGgZVDixVAf2q8dJMYFUC28/3UeGkWQGQ730+NFxZA+FPjpZvEGEBt5/up8dIGQA==","dtype":"float64","shape":[146]},"y":{"__ndarray__":"JL/vSutMIMAvbFAdcLNEQN/xdJF6VkJABvccU0pqN0AS0aZTYuI7QCS863iauC9AotusO4zOOkAqAn00szA/QOC8lL3IiBlAIDRNT779HUAwxhv/MjQWQNAV5bDZWQ3A9scIGaS2MkDy1W2honE1QBetL9r/Y0ZARP4UkCs2JEAAbwiHh4ryv6sj/0gBhUBA+rz71mNXPUCCcLXeVG09QFZjk1ZBDDdAnr6B1zkLNkBm6JIdy0g7QBqL4vUnrz1AY4HrFnkFRECiMDd1Ggo7QEal02YmCjhAak1EhgLaPEDa6/G9nxc/QJhqi5Mi2CNAfQ/Fok2AQEDaeTwgvxg6QO44XWMvaDhAEFUJIdXiBsAAyw6VkQMUwEDvTrTXLSJAkFkDESQ1I0B4hPlBuCkYQDDgI2mFDx1AaEBz83onKEDocVAu4ughQK4JK9YewTBAhILRVsoYLEBQcz1IQHMCQMh2TMjg6ypAsFQ8w+OlKUAQyxeZMTcfQEBz52GNs+4/+NGgjRxhF0AwzT6v2ucgQMD4CW277CPAWHROe2FqJkDMawo64hgmQDBeMXjsmgRAODE/pIjVF8Bo1J7am+IbQCCFPRfo4w5A4CNfiKLU979VGngHl9lDQAiYGc3y1y9AAJ1BLY993D9A7YwNLZMjQEACNG6CVR5AoBxDMuujG0ASMwB22xcwQLgAE92qtyhAbYQOEXntQUDq/jvnSFU+QFLGghjOAjpA4BC+owF3GkCQAxiEQKwjQA7C4HcO2jlAGBsioRMGJkDINdNPlLEWQEydHMEHTi9A4iZ0jdt3OEB2wYZ+z/8wQKCyarzbL/c/2GTniTplG0CE1vo8AwctQMRnhuyM4yhA5sOEy06BNUBYW72Ic/wgwB79YkdKOjNAhn7lGpW0MEB+F3ILs4gwQEhn5da55h9AGO0emo5JFcAAMXFxUjggQNV25S5PGUVAcmub8et2MUBg/TfUg1IVQGbnMcp1+ztAjz86MEmBREDCSGY/bso2QArqGB6h/DNAAq+WTmWcOkBaKzSBBZQ7QGqEQgjpBDlATmHRr5ZxOECRY32yO+hCQHQK1sTpSStADocpXBQGMUDqtoCWpRMyQIitLPdcIyRAfnvCIJXMMkDlZezVBfBFQP8lbmzLjENAF20iRxCHQkAN8TGRj/xFQHYzPByw/jVAIkfgPpgWPkDFVTZ9pyBDQKGELGTj4ERAc8bdShNlREDAeHSzzvwWQJD2SJtVsi9Avrm6ifl7PEA/jf/OF6xGQMkztaFfVENAaxmm3fYFRkCwCowpdA4wQLijBKAfex5AikaGRVk8NUASmLHeEqkxQN402RXaMjtA76gcY/W0R0ACFEi3nC08QBU6GenJF0JAyq0XqKVbOEDqfiHBaZs2QPB/ZZasTRnAtmENVmtYPkAObPXqKlE6QLAKjCl0DjBAwII/ymhiCkDiXtNiF/AzQDD8uC3EERNA8IO+cCijDEAogeQ8bI4bwC67IjdlPDJAyoKHu1TdMEBueJ8mleQ0QEqZMIXS6TNASsNfHs4aPEDMe0eNmo4pwA==","dtype":"float64","shape":[146]}},"selected":{"id":"1532","type":"Selection"},"selection_policy":{"id":"1546","type":"UnionRenderers"}},"id":"1531","type":"ColumnDataSource"},{"attributes":{"fill_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"line_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"size":{"units":"screen","value":10},"x":{"field":"Happiness_Score"},"y":{"field":"GNI_per_capita_PPP"}},"id":"1518","type":"Scatter"},{"attributes":{"overlay":{"id":"1528","type":"BoxAnnotation"}},"id":"1497","type":"BoxZoomTool"},{"attributes":{"text":"Happiness and Wealth by Country","text_color":{"value":"black"},"text_font_size":{"value":"12pt"}},"id":"1476","type":"Title"},{"attributes":{},"id":"1498","type":"ResetTool"},{"attributes":{"fill_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"line_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"size":{"units":"screen","value":10},"x":{"field":"Happiness_Score"},"y":{"field":"GNI_per_capita_PPP"}},"id":"1519","type":"Scatter"},{"attributes":{},"id":"1480","type":"LinearScale"},{"attributes":{"source":{"id":"1513","type":"ColumnDataSource"}},"id":"1522","type":"CDSView"},{"attributes":{"line_alpha":0.2,"line_color":"black","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1536","type":"Line"},{"attributes":{"axis_label":"GNI_per_capita_PPP","bounds":"auto","formatter":{"id":"1510","type":"BasicTickFormatter"},"major_label_orientation":"horizontal","ticker":{"id":"1490","type":"BasicTicker"}},"id":"1489","type":"LinearAxis"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"line_alpha":{"value":0.2},"line_color":{"field":"color","transform":{"id":"1512","type":"CategoricalColorMapper"}},"size":{"units":"screen","value":10},"x":{"field":"Happiness_Score"},"y":{"field":"GNI_per_capita_PPP"}},"id":"1520","type":"Scatter"},{"attributes":{},"id":"1510","type":"BasicTickFormatter"},{"attributes":{},"id":"1544","type":"UnionRenderers"},{"attributes":{},"id":"1490","type":"BasicTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1472","type":"HoverTool"},{"id":"1494","type":"SaveTool"},{"id":"1495","type":"PanTool"},{"id":"1496","type":"WheelZoomTool"},{"id":"1497","type":"BoxZoomTool"},{"id":"1498","type":"ResetTool"}]},"id":"1499","type":"Toolbar"},{"attributes":{"callback":null,"renderers":[{"id":"1521","type":"GlyphRenderer"}],"tags":["hv_created"],"tooltips":[["Happiness_Score","@{Happiness_Score}"],["GNI_per_capita_PPP","@{GNI_per_capita_PPP}"],["continent","@{continent}"],["Country","@{Country}"]]},"id":"1472","type":"HoverTool"},{"attributes":{"data_source":{"id":"1531","type":"ColumnDataSource"},"glyph":{"id":"1534","type":"Line"},"hover_glyph":null,"muted_glyph":{"id":"1536","type":"Line"},"nonselection_glyph":{"id":"1535","type":"Line"},"selection_glyph":null,"view":{"id":"1538","type":"CDSView"}},"id":"1537","type":"GlyphRenderer"},{"attributes":{"data_source":{"id":"1513","type":"ColumnDataSource"},"glyph":{"id":"1516","type":"Scatter"},"hover_glyph":{"id":"1519","type":"Scatter"},"muted_glyph":{"id":"1520","type":"Scatter"},"nonselection_glyph":{"id":"1517","type":"Scatter"},"selection_glyph":{"id":"1518","type":"Scatter"},"view":{"id":"1522","type":"CDSView"}},"id":"1521","type":"GlyphRenderer"},{"attributes":{},"id":"1508","type":"BasicTickFormatter"},{"attributes":{"label":{"field":"color"},"renderers":[{"id":"1521","type":"GlyphRenderer"}]},"id":"1530","type":"LegendItem"},{"attributes":{},"id":"1495","type":"PanTool"},{"attributes":{},"id":"1546","type":"UnionRenderers"},{"attributes":{},"id":"1514","type":"Selection"},{"attributes":{"callback":null,"end":7.969,"reset_end":7.969,"reset_start":2.653,"start":2.653,"tags":[[["Happiness_Score","Happiness_Score",null]]]},"id":"1470","type":"Range1d"}],"root_ids":["1467"]},"title":"Bokeh Application","version":"1.4.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1760').textContent;
+                  var render_items = [{"docid":"138a6655-76a0-4903-91d6-b543f37b52a8","roots":{"1467":"6bacc4bc-12ab-4f44-890f-199ddd6209c1"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
