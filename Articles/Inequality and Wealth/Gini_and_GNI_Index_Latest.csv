@@ -1,0 +1,115 @@
+﻿Country Name,Country Code,Gini Index Rank,Gini Index,GNI per capita PPP,GNI per capita PPP Rank
+Argentina,ARG,82,41.2,20.31,42
+Armenia,ARM,36,33.6,9.96,69
+Australia,AUS,51,35.8,45.65,11
+Austria,AUT,20,30.5,46.5,10
+Bangladesh,BGD,29,32.4,3.91,90
+Belarus,BLR,2,25.4,18.2,45
+Belgium,BEL,11,27.7,44.75,12
+Benin,BEN,102,47.8,2.11,103
+Bhutan,BTN,60,37.4,9,70
+Bolivia,BOL,92,44,7.27,77
+Botswana,BWA,111,53.3,16.47,50
+Brazil,BRA,111,53.3,15.37,52
+Bulgaria,BGR,60,37.4,17.38,47
+Burkina Faso,BFA,45,35.3,1.62,107
+Burundi,BDI,70,38.6,0.79,114
+Cameroon,CMR,99,46.6,3.28,99
+Canada,CAN,39,34,43.62,13
+Chile,CHL,99,46.6,23.26,37
+China,CHN,70,38.6,14.4,54
+Colombia,COL,107,49.7,14.24,55
+Comoros,COM,96,45.3,2.63,101
+Costa Rica,CRI,103,48.3,8.83,72
+Cote d'Ivoire,CIV,83,41.5,3.34,98
+Croatia,HRV,21,31.1,22.87,39
+Cyprus,CYP,39,34,31.98,20
+Czech Republic,CZE,4,25.9,30.09,22
+Denmark,DNK,13,28.2,50.56,6
+Dominican Republic,DOM,97,45.7,14.85,53
+Ecuador,ECU,94,44.7,11.24,64
+"Egypt, Arab Rep.",EGY,23,31.8,6.89,79
+El Salvador,SLV,66,38,7.53,75
+Estonia,EST,31,32.7,28.57,24
+Ethiopia,ETH,44,35,1.62,107
+Fiji,FJI,57,36.7,8.1,74
+Finland,FIN,7,27.1,41.06,15
+France,FRA,31,32.7,35.48,18
+Gabon,GAB,66,38,16.64,49
+"Gambia, The",GMB,52,35.9,2.32,102
+Georgia,GEO,65,37.9,10.63,68
+Germany,DEU,22,31.7,48.77,9
+Ghana,GHA,90,43.5,4.06,89
+Greece,GRC,54,36,26.94,27
+Guatemala,GTM,103,48.3,7.37,76
+Honduras,HND,109,50.5,4.57,88
+Hungary,HUN,19,30.4,25.46,31
+Iceland,ISL,12,27.8,43.5,14
+Indonesia,IDN,68,38.1,11.88,62
+"Iran, Islamic Rep.",IRN,78,40,20.21,43
+Ireland,IRL,23,31.8,52.99,5
+Israel,ISR,73,38.9,23.88,34
+Italy,ITA,48,35.4,36.65,17
+Kazakhstan,KAZ,9,27.5,23.61,35
+Kenya,KEN,80,40.8,2.96,100
+Kyrgyz Republic,KGZ,8,27.3,3.55,94
+Latvia,LVA,42,34.2,24.69,33
+Liberia,LBR,45,35.3,1.16,112
+Lithuania,LTU,60,37.4,27.78,26
+Luxembourg,LUX,38,33.8,67.59,1
+Malawi,MWI,94,44.7,1.22,111
+Malaysia,MYS,81,41,26.38,28
+Malta,MLT,18,29.4,28.24,25
+Mauritania,MRT,30,32.6,3.81,92
+Mexico,MEX,103,48.3,18.29,44
+"Micronesia, Fed. Sts.",FSM,79,40.1,3.54,95
+Moldova,MDA,4,25.9,7.25,78
+Mongolia,MNG,27,32.3,11.14,66
+Montenegro,MNE,26,31.9,15.58,51
+Morocco,MAR,74,39.5,3.36,97
+Mozambique,MOZ,113,54,1.28,110
+Myanmar,MMR,68,38.1,5.19,85
+Namibia,NAM,115,59.1,11.11,67
+Netherlands,NLD,13,28.2,50.34,7
+Nicaragua,NIC,98,46.2,4.82,87
+Niger,NER,43,34.3,0.93,113
+North Macedonia,MKD,50,35.6,13.4,57
+Norway,NOR,9,27.5,63.03,3
+Pakistan,PAK,35,33.5,5.05,86
+Panama,PAN,108,49.9,22.19,40
+Paraguay,PRY,106,48.8,12.57,59
+Peru,PER,89,43.3,13.14,58
+Philippines,PHL,93,44.4,8.85,71
+Poland,POL,23,31.8,25.88,29
+Portugal,PRT,49,35.5,28.87,23
+Romania,ROU,52,35.9,17.61,46
+Russian Federation,RUS,64,37.7,23.4,36
+Rwanda,RWA,91,43.7,1.92,105
+Samoa,WSM,72,38.7,5.31,84
+Serbia,SRB,76,39.6,14.23,56
+Seychelles,SYC,101,46.8,23.05,38
+Slovak Republic,SVK,6,26.5,24.9,32
+Slovenia,SVN,2,25.4,30.66,21
+Solomon Islands,SLB,59,37.1,2.03,104
+South Africa,ZAF,116,63,11.3,63
+Spain,ESP,55,36.2,32.22,19
+Sri Lanka,LKA,77,39.8,12.03,61
+St. Lucia,LCA,110,51.2,12.11,60
+Sweden,SWE,17,29.2,49.42,8
+Switzerland,CHE,27,32.3,65.45,2
+Tajikistan,TJK,39,34,3.41,96
+Thailand,THA,56,36.5,17.12,48
+Timor-Leste,TLS,15,28.7,5.65,83
+Togo,TGO,88,43.1,1.62,107
+Tonga,TON,63,37.6,5.91,81
+Tunisia,TUN,33,32.8,11.23,65
+Turkey,TUR,86,41.9,25.87,30
+Uganda,UGA,87,42.8,1.87,106
+Ukraine,UKR,1,25,8.21,73
+United Kingdom,GBR,34,33.2,37.31,16
+United States,USA,83,41.5,58.95,4
+Uruguay,URY,74,39.5,21.38,41
+Vietnam,VNM,45,35.3,6.1,80
+West Bank and Gaza,PSE,37,33.7,5.67,82
+"Yemen, Rep.",YEM,57,36.7,3.8,93
+Zambia,ZMB,114,57.1,3.86,91
