@@ -1,0 +1,13 @@
+﻿Country,Symbol,Name,Yahoo Symbol
+Broad,Broad,S&P 500 Index,^GSPC
+Energy,Energy,S&P 500 Energy Index,^GSPE
+Financials,Financials,S&P 500 Financials Index,^SP500-40
+Utilities,Utilities,S&P 500 Utilities Index,^SP500-55
+Industrials,Industrials,S&P 500 Industrials Index,^SP500-20
+Technology,Technology,S&P 500 Information Technology Index,^SP500-45
+Health Care,Health Care,S&P 500 Health Care Index,^SP500-35
+Consumer Discretionary,Consumer Discretionary,S&P 500 Consumer Discretionary Index,^SP500-25
+Consumer Staples,Consumer Staples,S&P 500 Consumer Staples Index,^SP500-30
+Materials,Materials,S&P 500 Materials Index,^SP500-15
+Communications,Communications,S&P 500 Telecommunication Services Index,^SP500-50
+Real Estate,Real Estate,S&P 500 Real Estate Index,^SP500-60
