@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Panel</title>
+              <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/alerts.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/card.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/dataframe.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/debugger.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/json.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/loading.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/markdown.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/widgets.css" type="text/css" />
+            <style>
+                
+            .bk.pn-loading.arc:before {
+              background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=");
+              background-size: auto calc(min(50%, 400px));
+            }
+            
+            </style>
+
+          <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.holoviz.org/panel/0.14.1/dist/panel.min.js"></script><script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+  </head>
+  <body>
+          
+              <div class="bk-root" id="a6c5a473-2a2e-4468-96cc-c0397bf1200e" data-root-id="1055"></div>
+      
+        <script type="application/json" id="1107">
+          {"eb44c9e5-fdc5-4c69-99a8-fa2d0c3f1df2":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1087"}],"margin":[0,0,0,0],"name":"Row00841","tags":["embedded"]},"id":"1055","type":"Row"},{"attributes":{"children":[{"id":"1086"},{"id":"1083"}]},"id":"1087","type":"Column"},{"attributes":{"editor":{"id":"1069"},"field":"Sector","formatter":{"id":"1068"},"title":"Sector"},"id":"1070","type":"TableColumn"},{"attributes":{"data":{"Beneish_M_hyphen_minus_Score":{"__ndarray__":"AAAAAAAABsAAAAAAAAACwHsUrkfhegTAPQrXo3A9BsC4HoXrUbgCwD0K16NwPQbAhetRuB6FA8CPwvUoXI8CwHE9CtejcAPAXI/C9ShcBcA=","dtype":"float64","order":"little","shape":[10]},"Name":["APPLE INC","MICROSOFT CORP","AMAZON COM INC","ALPHABET INC CLASS A","UNITEDHEALTH GROUP INC","ALPHABET INC CLASS C","JOHNSON &amp; JOHNSON","EXXON MOBIL CORP","PROCTER &amp; GAMBLE","NVIDIA CORP"],"Probability_of_Manipulation_left_parenthesis_percent_right_parenthesis":{"__ndarray__":"MzMzMzMz0z+F61G4HoXzP6RwPQrXo+A/SOF6FK5H0T+4HoXrUbjuP0jhehSuR9E/XI/C9Shc5z9SuB6F61HwPwAAAAAAAOg/UrgehetR2D8=","dtype":"float64","order":"little","shape":[10]},"Sector":["Information Technology","Information Technology","Consumer Discretionary","Communication","Health Care","Communication","Health Care","Energy","Consumer Staples","Information Technology"],"Ticker":["AAPL","MSFT","AMZN","GOOGL","UNH","GOOG","JNJ","XOM","PG","NVDA"]},"selected":{"id":"1057"},"selection_policy":{"id":"1088"}},"id":"1056","type":"ColumnDataSource"},{"attributes":{},"id":"1074","type":"NumberEditor"},{"attributes":{},"id":"1079","type":"NumberEditor"},{"attributes":{},"id":"1064","type":"StringEditor"},{"attributes":{},"id":"1059","type":"StringEditor"},{"attributes":{"format":"0,0.0[00000]"},"id":"1073","type":"NumberFormatter"},{"attributes":{},"id":"1058","type":"StringFormatter"},{"attributes":{"style":{"white-space":"nowrap"},"text":"&lt;span style=\"color:black;font-family:Arial;font-style:bold;font-weight:bold;font-size:12pt\"&gt;Beneish M-Score for Top 10 Largest Companies by Market Cap (ex-Financials)&lt;/span&gt;","width":450},"id":"1086","type":"Div"},{"attributes":{"format":"0,0.0[00000]"},"id":"1078","type":"NumberFormatter"},{"attributes":{},"id":"1063","type":"StringFormatter"},{"attributes":{"columns":[{"id":"1060"},{"id":"1065"},{"id":"1070"},{"id":"1075"},{"id":"1080"}],"height":280,"index_position":null,"reorderable":false,"source":{"id":"1056"},"view":{"id":"1085"},"width":950},"id":"1083","type":"DataTable"},{"attributes":{},"id":"1068","type":"StringFormatter"},{"attributes":{},"id":"1088","type":"UnionRenderers"},{"attributes":{"source":{"id":"1056"}},"id":"1085","type":"CDSView"},{"attributes":{},"id":"1069","type":"StringEditor"},{"attributes":{},"id":"1057","type":"Selection"},{"attributes":{"editor":{"id":"1064"},"field":"Name","formatter":{"id":"1063"},"title":"Name"},"id":"1065","type":"TableColumn"},{"attributes":{"editor":{"id":"1079"},"field":"Probability_of_Manipulation_left_parenthesis_percent_right_parenthesis","formatter":{"id":"1078"},"title":"Probability of Manipulation (%)"},"id":"1080","type":"TableColumn"},{"attributes":{"editor":{"id":"1059"},"field":"Ticker","formatter":{"id":"1058"},"title":"Ticker"},"id":"1060","type":"TableColumn"},{"attributes":{"editor":{"id":"1074"},"field":"Beneish_M_hyphen_minus_Score","formatter":{"id":"1073"},"title":"Beneish M-Score"},"id":"1075","type":"TableColumn"}],"root_ids":["1055"]},"title":"Bokeh Application","version":"2.4.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            const fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                  const docs_json = document.getElementById('1107').textContent;
+                  const render_items = [{"docid":"eb44c9e5-fdc5-4c69-99a8-fa2d0c3f1df2","root_ids":["1055"],"roots":{"1055":"a6c5a473-2a2e-4468-96cc-c0397bf1200e"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    let attempts = 0;
+                    const timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+  </body>
+</html>
