@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Panel</title>
+              <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/alerts.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/card.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/dataframe.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/debugger.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/json.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/loading.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/markdown.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.1/dist/css/widgets.css" type="text/css" />
+            <style>
+                
+            .bk.pn-loading.arc:before {
+              background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=");
+              background-size: auto calc(min(50%, 400px));
+            }
+            
+            </style>
+
+          <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.holoviz.org/panel/0.14.1/dist/panel.min.js"></script><script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+  </head>
+  <body>
+          
+              <div class="bk-root" id="3d327b27-20d4-4432-9956-e1a54b05bfc5" data-root-id="1437"></div>
+      
+        <script type="application/json" id="1484">
+          {"cbfbeb43-f0cd-491e-b232-b72db8f1225d":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"data":{"IVV":{"__ndarray__":"pHA9CtejHUCkcD0K16MbQB+F61G4HglAH4XrUbgeBUCuR+F6FK4PQOF6FK5H4fo/uB6F61G4+j+PwvUoXI/6P1K4HoXrUfQ/hetRuB6F8z+PwvUoXI8/QA==","dtype":"float64","order":"little","shape":[11]},"Name":["APPLE INC","MICROSOFT CORP","AMAZON COM INC","NVIDIA CORP","ALPHABET INC CLASS","META PLATFORMS INC CLASS A","BERKSHIRE HATHAWAY INC CLASS B","TESLA INC","UNITEDHEALTH GROUP INC","EXXON MOBIL CORP","Total"],"RSP":{"__ndarray__":"uB6F61G4zj+kcD0K16PQP0jhehSuR9E/H4XrUbge1T9I4XoUrkfRPzMzMzMzM9M/4XoUrkfhyj8AAAAAAADQP+F6FK5H4co/UrgehetRyD89CtejcD0EQA==","dtype":"float64","order":"little","shape":[11]},"Ticker":["AAPL","MSFT","AMZN","NVDA","GOOGL","META","BRK-B","TSLA","UNH","XOM","-"]},"selected":{"id":"1439"},"selection_policy":{"id":"1465"}},"id":"1438","type":"ColumnDataSource"},{"attributes":{},"id":"1440","type":"StringFormatter"},{"attributes":{},"id":"1465","type":"UnionRenderers"},{"attributes":{"children":[{"id":"1463"},{"id":"1460"}]},"id":"1464","type":"Column"},{"attributes":{"editor":{"id":"1451"},"field":"IVV","formatter":{"id":"1450"},"title":"IVV"},"id":"1452","type":"TableColumn"},{"attributes":{"columns":[{"id":"1442"},{"id":"1447"},{"id":"1452"},{"id":"1457"}],"height":350,"index_position":null,"reorderable":false,"source":{"id":"1438"},"view":{"id":"1462"},"width":950},"id":"1460","type":"DataTable"},{"attributes":{"children":[{"id":"1464"}],"margin":[0,0,0,0],"name":"Row01319","tags":["embedded"]},"id":"1437","type":"Row"},{"attributes":{},"id":"1439","type":"Selection"},{"attributes":{},"id":"1446","type":"StringEditor"},{"attributes":{},"id":"1441","type":"StringEditor"},{"attributes":{"editor":{"id":"1441"},"field":"Ticker","formatter":{"id":"1440"},"title":"Ticker"},"id":"1442","type":"TableColumn"},{"attributes":{"style":{"white-space":"nowrap"},"text":"&lt;span style=\"color:black;font-family:Arial;font-style:bold;font-weight:bold;font-size:12pt\"&gt;Weight (%) in Current Top 10 Companies in the iShares Core S&amp;P 500\u00ae ETF (IVV) vs. Invesco S&amp;P 500\u00ae Equal Weight ETF (RSP)&lt;/span&gt;","width":450},"id":"1463","type":"Div"},{"attributes":{"editor":{"id":"1446"},"field":"Name","formatter":{"id":"1445"},"title":"Name"},"id":"1447","type":"TableColumn"},{"attributes":{},"id":"1451","type":"NumberEditor"},{"attributes":{},"id":"1445","type":"StringFormatter"},{"attributes":{},"id":"1456","type":"NumberEditor"},{"attributes":{"source":{"id":"1438"}},"id":"1462","type":"CDSView"},{"attributes":{"format":"0,0.0[00000]"},"id":"1455","type":"NumberFormatter"},{"attributes":{"format":"0,0.0[00000]"},"id":"1450","type":"NumberFormatter"},{"attributes":{"editor":{"id":"1456"},"field":"RSP","formatter":{"id":"1455"},"title":"RSP"},"id":"1457","type":"TableColumn"}],"root_ids":["1437"]},"title":"Bokeh Application","version":"2.4.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            const fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                  const docs_json = document.getElementById('1484').textContent;
+                  const render_items = [{"docid":"cbfbeb43-f0cd-491e-b232-b72db8f1225d","root_ids":["1437"],"roots":{"1437":"3d327b27-20d4-4432-9956-e1a54b05bfc5"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    let attempts = 0;
+                    const timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+  </body>
+</html>
