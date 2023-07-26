@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Panel</title>
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/alerts.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/card.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/dataframe.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/debugger.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/json.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/loading.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/markdown.css" type="text/css" />
+            <link rel="stylesheet" href="https://unpkg.com/@holoviz/panel@0.13.1/dist/css/widgets.css" type="text/css" />
+            <style>
+                
+            .bk.pn-loading.arcs:before {
+              background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+");
+              background-size: auto calc(min(50%, 400px));
+            }
+            
+            </style>
+
+          <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script><script type="text/javascript" src="https://unpkg.com/@holoviz/panel@0.13.1/dist/panel.min.js"></script><script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+  </head>
+  <body>
+          
+              <div class="bk-root" id="6891560b-f3cf-404f-a47e-f6f4d03547b8" data-root-id="1002"></div>
+      
+        <script type="application/json" id="1044">
+          {"31c41f94-a738-467f-8b5f-01971fc0fa90":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{},"id":"1004","type":"Selection"},{"attributes":{"data":{"Category":["US Large Caps","US Small Caps","World Developed","Emerging Markets","US Fixed Income Aggregate","US High Yield","US TIPS","US T-Bill","International Treasury Bond","Emerging Market Sovereign Bond","Commodities","Real Estate"],"Name":["iShares Core S&amp;P 500 ETF","iShares Russell 2000 ETF","Vanguard FTSE Developed Markets ETF","iShares MSCI Emerging Markets ETF","iShares Core U.S. Aggregate Bond ETF","iShares iBoxx $ High Yield Corporate Bond ETF","iShares TIPS Bond ETF","SPDR\u00ae Bloomberg 1-3 Month T-Bill ETF","SPDR\u00ae Bloomberg International Treasury Bond ETF","iShares J.P. Morgan USD Emerging Markets Bond ETF","Invesco DB Commodity Index Tracking Fund","Vanguard Real Estate ETF"],"Ticker":["IVV","IWM","VEA","EEM","AGG","HYG","TIP","BIL","BWX","EMB","DBC","VNQ"]},"selected":{"id":"1004"},"selection_policy":{"id":"1025"}},"id":"1003","type":"ColumnDataSource"},{"attributes":{},"id":"1025","type":"UnionRenderers"},{"attributes":{"children":[{"id":"1024"}],"margin":[0,0,0,0],"name":"Row00798","tags":["embedded"]},"id":"1002","type":"Row"},{"attributes":{"editor":{"id":"1006"},"field":"Category","formatter":{"id":"1005"},"title":"Category"},"id":"1007","type":"TableColumn"},{"attributes":{},"id":"1005","type":"StringFormatter"},{"attributes":{},"id":"1006","type":"StringEditor"},{"attributes":{"source":{"id":"1003"}},"id":"1022","type":"CDSView"},{"attributes":{},"id":"1011","type":"StringEditor"},{"attributes":{},"id":"1010","type":"StringFormatter"},{"attributes":{"columns":[{"id":"1007"},{"id":"1012"},{"id":"1017"}],"height":250,"index_position":null,"reorderable":false,"source":{"id":"1003"},"view":{"id":"1022"}},"id":"1020","type":"DataTable"},{"attributes":{},"id":"1015","type":"StringFormatter"},{"attributes":{"style":{"white-space":"nowrap"},"text":"&lt;span style=\"color:black;font-family:Arial;font-style:bold;font-weight:bold;font-size:12pt\"&gt;Asset Class Mapping Table&lt;/span&gt;","width":450},"id":"1023","type":"Div"},{"attributes":{"editor":{"id":"1011"},"field":"Name","formatter":{"id":"1010"},"title":"Name"},"id":"1012","type":"TableColumn"},{"attributes":{},"id":"1016","type":"StringEditor"},{"attributes":{"children":[{"id":"1023"},{"id":"1020"}]},"id":"1024","type":"Column"},{"attributes":{"editor":{"id":"1016"},"field":"Ticker","formatter":{"id":"1015"},"title":"Ticker"},"id":"1017","type":"TableColumn"}],"root_ids":["1002"]},"title":"Bokeh Application","version":"2.4.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            const fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                  const docs_json = document.getElementById('1044').textContent;
+                  const render_items = [{"docid":"31c41f94-a738-467f-8b5f-01971fc0fa90","root_ids":["1002"],"roots":{"1002":"6891560b-f3cf-404f-a47e-f6f4d03547b8"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    let attempts = 0;
+                    const timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+  </body>
+</html>
